@@ -136,9 +136,10 @@
     height: 380px;
   }
   .page-hero-banner {
-    padding-top: calc(var(--header-height) + 3.25rem);
-    padding-bottom: 3.75rem;
-    min-height: 390px;
+    height: 480px;
+    min-height: 480px;
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-bottom: 2rem;
   }
   .page-hero-banner .section-title {
     font-size: 2.25rem;
@@ -378,9 +379,10 @@
   }
 
   .page-hero-banner {
-    padding-top: calc(var(--header-height) + 2.5rem);
-    padding-bottom: 3.25rem;
-    min-height: 350px;
+    height: 440px;
+    min-height: 440px;
+    padding-top: calc(var(--header-height) + 1.25rem);
+    padding-bottom: 1.5rem;
   }
   .page-hero-banner .section-title {
     font-size: 1.75rem;
