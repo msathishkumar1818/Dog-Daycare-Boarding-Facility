@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canine Haven Resort | Luxury Country Retreat &amp; Canine Sanctuary</title>
+  <meta name="description"
+    content="Five-star canine country resort, private garden suites, canine hydro splash oasis, and personalized restorative wellness care.">
+
+  <!-- Favicon with Official Logo -->
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/logo.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core External Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       BRANDED PAGE LOADER
+       ====================================================================== -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Brand Logo" class="loader-logo" width="90" height="90">
+        <div class="loader-spinner"></div>
+      </div>
+      <h2 class="loader-title">Canine Haven</h2>
+      <p class="loader-subtitle">Luxury Resort &amp; Boarding Facility</p>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FIXED SLIM HEADER (Compact, Single-Line, Desktop + Mobile)
+       ====================================================================== -->
+  <header id="siteHeader" class="site-header">
+    <div class="container header-container">
+
+      <!-- Logo + Brand Identity -->
+      <a href="index.html" class="brand-identity" aria-label="Canine Haven Home">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Logo" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text">
+          <span class="brand-name">Canine Haven</span>
+          <span class="brand-tagline">Daycare &amp; Boarding</span>
+        </div>
+      </a>
+
+      <!-- Desktop Primary Navigation: Exactly 6 Items -->
+      <nav class="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+
+          <!-- Item 1: Home Dropdown (Click Only) -->
+          <li class="nav-item-dropdown">
+            <button id="homeDropdownTrigger" class="dropdown-trigger active" type="button" aria-expanded="false"
+              aria-haspopup="true" aria-controls="homeDropdownMenu">
+              <span>Home</span>
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div id="homeDropdownMenu" class="dropdown-menu" role="menu">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <span>Home 1 (Signature)</span>
+              </a>
+              <a href="home-2.html" class="dropdown-item active" role="menuitem">
+                <span>Home 2 (Resort View)</span>
+                <span class="badge">Active</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Item 2: About (Mandatory) -->
+          <li>
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+
+          <!-- Item 3: Services -->
+          <li>
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+
+          <!-- Item 4: Facilities -->
+          <li>
+            <a href="facilities.html" class="nav-link">Facilities</a>
+          </li>
+
+          <!-- Item 5: Contact -->
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+
+          <!-- Item 6: Dashboard -->
+          <li>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Controls (RTL, Dark Mode #000000, Login Button) -->
+      <div class="header-actions">
+
+        <!-- RTL / LTR Toggle -->
+        <button class="rtl-toggle-btn" type="button" aria-label="Toggle text direction">
+          RTL
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Compact Login Button -->
+        <a href="login.html" class="btn-login" aria-label="Pet Owner Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Header Primary CTA Button -->
+        <a href="contact.html" class="btn-header-cta" aria-label="Book a Stay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Book a Stay</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuOpenBtn" class="mobile-menu-btn" type="button" aria-label="Open mobile navigation menu"
+          aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE MENU DRAWER & BACKDROP
+       ====================================================================== -->
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <div id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Logo" class="brand-logo-img" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-name">Canine Haven</span>
+          <span class="brand-tagline">Daycare &amp; Boarding</span>
+        </div>
+      </div>
+      <button id="mobileDrawerCloseBtn" class="mobile-drawer-close" type="button" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li>
+          <button id="mobileHomeAccordionBtn" class="mobile-accordion-header" type="button" aria-expanded="false">
+            <span>Home</span>
+            <svg class="mobile-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="mobileHomeAccordionContent" class="mobile-accordion-content">
+            <a href="index.html" class="mobile-sub-link">Home 1 (Signature Facility)</a>
+            <a href="home-2.html" class="mobile-sub-link">Home 2 (Resort Experience)</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="mobile-drawer-controls">
+        <div class="mobile-control-row">
+          <span class="mobile-control-label">Appearance</span>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
+            <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+            </svg>
+            <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mobile-control-row">
+          <span class="mobile-control-label">Text Direction</span>
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode">
+            RTL
+          </button>
+        </div>
+
+        <div class="mobile-drawer-actions">
+          <a href="contact.html" class="mobile-btn-cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Book a Stay</span>
+          </a>
+          <a href="login.html" class="mobile-btn-login">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            <span>Pet Owner Login</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MAIN CONTENT: EXACTLY 6 CONTENT SECTIONS (HOME 2 - RESORT VIEW)
+       ====================================================================== -->
+  <main id="mainContent">
+
+    <!-- ------------------------------------------------------------------
+         SECTION 1: HERO - PANORAMIC RESORT BANNER & FLOATING RIBBON
+         ------------------------------------------------------------------ -->
+    <section class="hero-resort" aria-labelledby="resortHeroTitle">
+      <img src="assets/images/hero/p11.jpg" alt="Scenic green canine country resort meadow" class="hero-resort-bg"
+        width="1400" height="600">
+      <div class="hero-resort-overlay"></div>
+
+      <div class="container hero-resort-content">
+        <span class="resort-badge">
+          &starf; The Country Resort Experience &starf;
+        </span>
+        <h1 id="resortHeroTitle" class="hero-resort-title">
+          A Five-Star Canine Sanctuary &amp; <span>Wellness Retreat</span>
+        </h1>
+        <p class="hero-resort-sub">
+          Private garden suites, zero-entry splash pools, and calm therapeutic care designed for holistic canine
+          well-being.
+        </p>
+
+        <!-- Floating Glassmorphic Booking Ribbon -->
+        <form class="resort-booking-ribbon" action="dashboard.html" method="get">
+          <div class="ribbon-field">
+            <label for="resortSuiteType" class="ribbon-label">Suite Tier</label>
+            <select id="resortSuiteType" class="ribbon-select">
+              <option value="garden">Garden View Suite</option>
+              <option value="penthouse">Presidential Penthouse</option>
+              <option value="day-escape">Country Day Retreat</option>
+            </select>
+          </div>
+
+          <div class="ribbon-field">
+            <label for="stayDuration" class="ribbon-label">Stay Type</label>
+            <select id="stayDuration" class="ribbon-select">
+              <option value="overnight">Overnight Stay</option>
+              <option value="weekend">Weekend Getaway (3 Days)</option>
+              <option value="weekly">Extended Holiday (7+ Days)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary" style="height: 44px; padding: 0.6rem 1.4rem;">
+            <span>Check Availability</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 2: THE RESORT GROUNDS (Architectural Mosaic - NOT Cards)
+         ------------------------------------------------------------------ -->
+    <section class="resort-mosaic-section" aria-labelledby="mosaicTitle">
+      <div class="container">
+
+        <div style="text-align: center;">
+          <span class="section-tag green">Exclusive Amenities</span>
+          <h2 id="mosaicTitle" class="section-title">A Destination Tailored For Relaxation</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            Ten private acres dedicated to tranquil nature trails, filtered splash pools, and private sunlit suites.
+          </p>
+        </div>
+
+        <div class="mosaic-grid">
+
+          <!-- Tall Featured Card: Hydro Pool -->
+          <div class="mosaic-tall-card">
+            <img src="assets/images/sections/p12.jpg" alt="Dog splashing happily in clean pool" width="700"
+              height="460">
+            <div class="mosaic-overlay">
+              <span class="mosaic-tag">Hydrotherapy &amp; Fun</span>
+              <h3 class="mosaic-title">Zero-Entry Splash Oasis</h3>
+              <p class="mosaic-desc">Mineral-filtered, non-chlorinated shallow splash lagoons with gentle fountains for
+                joyful water play.</p>
+            </div>
+          </div>
+
+          <!-- Stack of 2 Half Cards -->
+          <div class="mosaic-stack">
+
+            <div class="mosaic-half-card">
+              <img src="assets/images/sections/p13.jpg" alt="Cozy sunlit dog suite with warm bed" width="500"
+                height="220">
+              <div class="mosaic-overlay">
+                <span class="mosaic-tag">Private Living</span>
+                <h3 class="mosaic-title" style="font-size: 1.25rem;">Garden View Suites</h3>
+                <p class="mosaic-desc">Sound-insulated master suites with tempered glass and personal garden vistas.</p>
+              </div>
+            </div>
+
+            <div class="mosaic-half-card">
+              <img src="assets/images/sections/p14.jpg" alt="Dog resting under covered shaded cabana" width="500"
+                height="220">
+              <div class="mosaic-overlay">
+                <span class="mosaic-tag">Rest &amp; Shade</span>
+                <h3 class="mosaic-title" style="font-size: 1.25rem;">Shaded Cabana Lounges</h3>
+                <p class="mosaic-desc">Misted outdoor gazebos where dogs unwind with gentle afternoon breezes.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 3: RESORT PACKAGES (Strictly Even 2-Card Resort Comparison)
+         ------------------------------------------------------------------ -->
+    <section class="resort-packages-section" aria-labelledby="packagesTitle">
+      <div class="container">
+
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="section-tag">Sanctuary Packages</span>
+          <h2 id="packagesTitle" class="section-title">All-Inclusive Country Retreats</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            Transparent packages with private suites, organic treats, and restorative enrichment.
+          </p>
+        </div>
+
+        <div class="care-tier-grid">
+
+          <!-- Card 1: Country Day Escape -->
+          <div class="care-card">
+            <div class="care-card-img-wrap">
+              <img src="assets/images/services/p15.jpg" alt="Happy golden puppy in lush green meadow"
+                class="care-card-img" width="560" height="240">
+              <span class="care-card-badge">Day Retreat</span>
+            </div>
+            <div class="care-card-body">
+              <div>
+                <div class="care-card-top">
+                  <h3 class="care-card-heading">The Country Day Escape</h3>
+                  <div class="care-card-price">$55 <span>/ day</span></div>
+                </div>
+                <p class="care-card-desc">
+                  Curated outdoor trail walks, supervised hydro-pool fun, and organic farm treat breaks.
+                </p>
+                <div class="care-spec-list">
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Guided woodland nature walk with certified handler</span>
+                  </div>
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Access to mineral splash pool &amp; misted cabanas</span>
+                  </div>
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Midday nap in private climate-controlled pavilion</span>
+                  </div>
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Organic lavender coat spritz &amp; brush at checkout</span>
+                  </div>
+                </div>
+              </div>
+              <div class="care-card-footer">
+                <a href="dashboard.html" class="btn-primary">Reserve Day Escape</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Presidential Penthouse Stay -->
+          <div class="care-card">
+            <div class="care-card-img-wrap">
+              <img src="assets/images/services/p16.jpg" alt="Dog sleeping peacefully on luxury duvet in suite"
+                class="care-card-img" width="560" height="240">
+              <span class="care-card-badge">VIP Overnight</span>
+            </div>
+            <div class="care-card-body">
+              <div>
+                <div class="care-card-top">
+                  <h3 class="care-card-heading">Presidential Penthouse</h3>
+                  <div class="care-card-price">$95 <span>/ night</span></div>
+                </div>
+                <p class="care-card-desc">
+                  Exclusive private suite with memory foam bedding, personal television, and dedicated tuck-ins.
+                </p>
+                <div class="care-spec-list">
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Private master suite with tempered glass garden door</span>
+                  </div>
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Orthopedic memory foam mattress with hypoallergenic fleece</span>
+                  </div>
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Bedtime story, 15-minute snuggle, and organic evening biscuit</span>
+                  </div>
+                  <div class="care-spec-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>Dedicated 4K HD in-suite webcam with two-way audio</span>
+                  </div>
+                </div>
+              </div>
+              <div class="care-card-footer">
+                <a href="dashboard.html" class="btn-primary">Book Penthouse Suite</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 4: DAILY WELLNESS RHYTHM (Split Layout with Timeline Steps)
+         ------------------------------------------------------------------ -->
+    <section class="resort-rhythm-section" aria-labelledby="rhythmTitle">
+      <div class="container">
+
+        <div style="text-align: center; margin-bottom: 2.75rem;">
+          <span class="section-tag green">Holistic Daily Care</span>
+          <h2 id="rhythmTitle" class="section-title">The Resort Daily Wellness Rhythm</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            Carefully structured days balance invigorating outdoor adventures with soothing therapeutic rest.
+          </p>
+        </div>
+
+        <div class="rhythm-showcase-grid">
+
+          <!-- Card 1 -->
+          <div class="rhythm-showcase-card">
+            <div class="rhythm-showcase-img-wrap">
+              <img src="assets/images/sections/p17.jpg" alt="Dog happily walking along sunlit nature trail"
+                class="rhythm-showcase-img" width="400" height="400" loading="lazy">
+            </div>
+            <div class="rhythm-showcase-info">
+              <h3 class="rhythm-showcase-title">Garden Stroll</h3>
+              <p class="rhythm-showcase-sub">07:30 AM &bull; Fresh air nature walk</p>
+              <div class="rhythm-showcase-tags">STEP 01 &bull; TRAIL &bull; BREAKFAST</div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="rhythm-showcase-card">
+            <div class="rhythm-showcase-img-wrap">
+              <img src="assets/images/gallery/p18.jpg" alt="Dog playing joyfully in water splash pool"
+                class="rhythm-showcase-img" width="400" height="400" loading="lazy">
+            </div>
+            <div class="rhythm-showcase-info">
+              <h3 class="rhythm-showcase-title">Splash Oasis</h3>
+              <p class="rhythm-showcase-sub">10:30 AM &bull; Mineral splash pool </p>
+              <div class="rhythm-showcase-tags">STEP 02 &bull; SPLASH &bull; AGILITY</div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="rhythm-showcase-card">
+            <div class="rhythm-showcase-img-wrap">
+              <img src="assets/images/gallery/p19.jpg" alt="Two friendly dogs sharing play on green meadow"
+                class="rhythm-showcase-img" width="400" height="400" loading="lazy">
+            </div>
+            <div class="rhythm-showcase-info">
+              <h3 class="rhythm-showcase-title">Meadow Agility</h3>
+              <p class="rhythm-showcase-sub">01:00 PM &bull; Natural free romp</p>
+              <div class="rhythm-showcase-tags">STEP 03 &bull; PLAY &bull; TREATS</div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="rhythm-showcase-card">
+            <div class="rhythm-showcase-img-wrap">
+              <img src="assets/images/gallery/p20.jpg" alt="Dog sleeping peacefully on comfortable resort sofa"
+                class="rhythm-showcase-img" width="400" height="400" loading="lazy">
+            </div>
+            <div class="rhythm-showcase-info">
+              <h3 class="rhythm-showcase-title">Aromatherapy Nap</h3>
+              <p class="rhythm-showcase-sub">03:30 PM &bull; Lavender acoustic </p>
+              <div class="rhythm-showcase-tags">STEP 04 &bull; AROMA &bull; SNOOZE</div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="rhythm-showcase-card">
+            <div class="rhythm-showcase-img-wrap">
+              <img src="assets/images/sections/p21.jpg" alt="Cozy luxury garden dog suite with warm bedding"
+                class="rhythm-showcase-img" width="400" height="400" loading="lazy">
+            </div>
+            <div class="rhythm-showcase-info">
+              <h3 class="rhythm-showcase-title">Supper &amp; Snuggles</h3>
+              <p class="rhythm-showcase-sub">07:00 PM &bull; Warm fleece tuck-in</p>
+              <div class="rhythm-showcase-tags">STEP 05 &bull; SUPPER &bull; CARE</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 5: GUEST SPOTLIGHT (Photo Moments)
+         ------------------------------------------------------------------ -->
+    <section class="guest-spotlight-section" aria-labelledby="spotlightTitle">
+      <div class="container">
+
+        <div style="text-align: center;">
+          <span class="section-tag">Sanctuary Gallery</span>
+          <h2 id="spotlightTitle" class="section-title">Happy Resort Guests in Action</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            Candid glimpses into our guests enjoying resort amenities, nature trails, and cozy suites.
+          </p>
+        </div>
+
+        <div class="spotlight-grid">
+
+          <div class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/images/gallery/p22.jpg" alt="Golden dog playing joyfully in water pool"
+                class="spotlight-img" width="380" height="220">
+            </div>
+            <div class="spotlight-body">
+              <span class="spotlight-status">Hydro Oasis Guest</span>
+              <h4 class="spotlight-guest-name">Cooper &bull; Golden Retriever</h4>
+              <p class="spotlight-quote">&ldquo;Cooper loves the shallow fountains! He never wants to leave the
+                pool.&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/images/gallery/p23.jpg" alt="Dog smiling happily on comfortable resort sofa"
+                class="spotlight-img" width="380" height="220">
+            </div>
+            <div class="spotlight-body">
+              <span class="spotlight-status">Penthouse Boarder</span>
+              <h4 class="spotlight-guest-name">Luna &bull; French Bulldog</h4>
+              <p class="spotlight-quote">&ldquo;Luna's sound-isolated suite kept her completely calm during July 4th
+                fireworks.&rdquo;</p>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-img-wrap">
+              <img src="assets/images/gallery/p24.jpg" alt="Two friendly dogs sharing a stick on green meadow"
+                class="spotlight-img" width="380" height="220">
+            </div>
+            <div class="spotlight-body">
+              <span class="spotlight-status">Trail Romper</span>
+              <h4 class="spotlight-guest-name">Rocky &bull; Australian Shepherd</h4>
+              <p class="spotlight-quote">&ldquo;The morning woodland walks gave Rocky the exercise and mental enrichment
+                he craves.&rdquo;</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 6: RESORT RESERVATION CTA ("last section cta")
+         ------------------------------------------------------------------ -->
+    <section class="resort-cta-section" aria-labelledby="resortCtaTitle">
+      <div class="container">
+
+        <div class="resort-cta-card">
+          <div class="resort-cta-left">
+            <span class="section-tag green">Limited VIP Availability</span>
+            <h2 id="resortCtaTitle" class="section-title" style="margin-top: 0.35rem; margin-bottom: 0.5rem;">
+              Reserve Your Dog's Next Country Holiday
+            </h2>
+            <p class="section-desc" style="margin-bottom: 1.25rem;">
+              Experience the tranquility of Canine Haven Resort. Schedule a private concierge tour or book an upcoming
+              holiday retreat online.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="dashboard.html" class="btn-primary">
+                <span>Book Resort Suite</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <a href="contact.html" class="btn-secondary">
+                <span>Contact Resort Concierge</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="resort-cta-right">
+            <img src="assets/images/sections/p25.jpg" alt="Loving caregiver embracing happy dog in sunny resort garden"
+              class="resort-cta-img" width="500" height="380">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       SCROLL TO TOP BUTTON
+       ====================================================================== -->
+  <button id="scrollToTopBtn" class="scroll-to-top" type="button" aria-label="Scroll back to top of page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ======================================================================
+       SHARED FOOTER (Accreditation-Verified & Comprehensive)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <!-- Top Grid -->
+      <div class="footer-top">
+
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <div class="brand-identity">
+            <img src="assets/images/logo/logo.png" alt="Canine Haven Brand Logo" class="brand-logo-img" width="44"
+              height="44">
+            <div class="brand-text">
+              <span class="brand-name">Canine Haven</span>
+              <span class="brand-tagline">Daycare &amp; Boarding</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Certified veterinary-supervised daycare, luxury boarding suites, and antimicrobial turf play yards with 24/7
+            webcams.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" class="footer-social-btn" aria-label="Follow Canine Haven on Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="footer-social-btn" aria-label="Follow Canine Haven on Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="footer-social-btn" aria-label="Watch Canine Haven on YouTube" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+          <div class="footer-accreditations">
+            <span class="accred-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Fear-Free Certified
+            </span>
+            <span class="accred-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Pet CPR &amp; First-Aid
+            </span>
+            <span class="accred-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              24/7 Vet On-Call
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h2 class="footer-col-title">Navigation</h2>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home (Signature)</a></li>
+            <li><a href="home-2.html" class="footer-link">Home (Resort)</a></li>
+            <li><a href="about.html" class="footer-link">About Our Facility</a></li>
+            <li><a href="services.html" class="footer-link">Daycare &amp; Boarding</a></li>
+            <li><a href="facilities.html" class="footer-link">Play Yards &amp; Suites</a></li>
+            <li><a href="dashboard.html" class="footer-link">Pet Owner Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialized Care -->
+        <div>
+          <h2 class="footer-col-title">Specialized Care</h2>
+          <ul class="footer-links">
+            <li><a href="services.html#daycare" class="footer-link">Social Play Daycare</a></li>
+            <li><a href="services.html#boarding" class="footer-link">Luxury Boarding Suites</a></li>
+            <li><a href="services.html#puppy" class="footer-link">Puppy Enrichment</a></li>
+            <li><a href="services.html#senior" class="footer-link">Gentle Senior Lounge</a></li>
+            <li><a href="services.html#spa" class="footer-link">Bath &amp; Spa Refresh</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Facility Hours & Contact -->
+        <div>
+          <h2 class="footer-col-title">Facility Hours &amp; Location</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <div>
+                <strong>Mon – Fri:</strong> 6:30 AM – 7:30 PM<br>
+                <strong>Sat – Sun:</strong> 7:30 AM – 6:30 PM
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                4820 Greenfield Way, Suite 100<br>
+                Westlake Valley, CA 91361
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <div>
+                <strong>Tel:</strong> (555) 729-7227<br>
+                <strong>24/7 Vet Line:</strong> (555) 729-9911
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Canine Haven Dog Daycare &amp; Boarding Facility. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Care Agreement &amp; Waiver</a>
+          <a href="#vaccinations">Vaccination Protocols</a>
+          <a href="contact.html">Emergency Line</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       SHARED JAVASCRIPT (Strictly External)
+       ====================================================================== -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

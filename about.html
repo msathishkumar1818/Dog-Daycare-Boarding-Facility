@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Canine Haven | Veterinary-Led Dog Daycare &amp; Boarding</title>
+  <meta name="description"
+    content="Discover our veterinary-guided approach to cage-free daycare, fear-free certified handling, and luxury canine boarding suites.">
+
+  <!-- Favicon with Official Logo -->
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo/logo.png">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core External Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       BRANDED PAGE LOADER
+       ====================================================================== -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Brand Logo" class="loader-logo" width="90" height="90">
+        <div class="loader-spinner"></div>
+      </div>
+      <h2 class="loader-title">Canine Haven</h2>
+      <p class="loader-subtitle">About Our Care &amp; Mission</p>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       FIXED SLIM HEADER (Compact, Single-Line, Desktop + Mobile)
+       ====================================================================== -->
+  <header id="siteHeader" class="site-header">
+    <div class="container header-container">
+
+      <!-- Logo + Brand Identity -->
+      <a href="index.html" class="brand-identity" aria-label="Canine Haven Home">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Logo" class="brand-logo-img" width="44" height="44">
+        <div class="brand-text">
+          <span class="brand-name">Canine Haven</span>
+          <span class="brand-tagline">Daycare &amp; Boarding</span>
+        </div>
+      </a>
+
+      <!-- Desktop Primary Navigation: Exactly 6 Items -->
+      <nav class="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+
+          <!-- Item 1: Home Dropdown (Click Only) -->
+          <li class="nav-item-dropdown">
+            <button id="homeDropdownTrigger" class="dropdown-trigger" type="button" aria-expanded="false"
+              aria-haspopup="true" aria-controls="homeDropdownMenu">
+              <span>Home</span>
+              <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div id="homeDropdownMenu" class="dropdown-menu" role="menu">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <span>Home 1 (Signature)</span>
+              </a>
+              <a href="home-2.html" class="dropdown-item" role="menuitem">
+                <span>Home 2 (Resort View)</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Item 2: About (Active) -->
+          <li>
+            <a href="about.html" class="nav-link active" aria-current="page">About Us</a>
+          </li>
+
+          <!-- Item 3: Services -->
+          <li>
+            <a href="services.html" class="nav-link">Services</a>
+          </li>
+
+          <!-- Item 4: Facilities -->
+          <li>
+            <a href="facilities.html" class="nav-link">Facilities</a>
+          </li>
+
+          <!-- Item 5: Contact -->
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+
+          <!-- Item 6: Dashboard -->
+          <li>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Controls (RTL, Dark Mode #000000, Login Button) -->
+      <div class="header-actions">
+
+        <!-- RTL / LTR Toggle -->
+        <button class="rtl-toggle-btn" type="button" aria-label="Toggle text direction">
+          RTL
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Compact Login Button -->
+        <a href="login.html" class="btn-login" aria-label="Pet Owner Login">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+            <polyline points="10 17 15 12 10 7"></polyline>
+            <line x1="15" y1="12" x2="3" y2="12"></line>
+          </svg>
+          <span>Login</span>
+        </a>
+
+        <!-- Header Primary CTA Button -->
+        <a href="contact.html" class="btn-header-cta" aria-label="Book a Stay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Book a Stay</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobileMenuOpenBtn" class="mobile-menu-btn" type="button" aria-label="Open mobile navigation menu"
+          aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-line"></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE MENU DRAWER & BACKDROP
+       ====================================================================== -->
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <div id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Logo" class="brand-logo-img" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-name">Canine Haven</span>
+          <span class="brand-tagline">Daycare &amp; Boarding</span>
+        </div>
+      </div>
+      <button id="mobileDrawerCloseBtn" class="mobile-drawer-close" type="button" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-list">
+        <li>
+          <button id="mobileHomeAccordionBtn" class="mobile-accordion-header" type="button" aria-expanded="false">
+            <span>Home</span>
+            <svg class="mobile-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="mobileHomeAccordionContent" class="mobile-accordion-content">
+            <a href="index.html" class="mobile-sub-link">Home 1 (Signature Facility)</a>
+            <a href="home-2.html" class="mobile-sub-link">Home 2 (Resort Experience)</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="mobile-nav-link active">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="facilities.html" class="mobile-nav-link">Facilities</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="mobile-nav-link">Dashboard</a></li>
+      </ul>
+
+      <div class="mobile-drawer-controls">
+        <div class="mobile-control-row">
+          <span class="mobile-control-label">Appearance</span>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
+            <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+            </svg>
+            <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mobile-control-row">
+          <span class="mobile-control-label">Text Direction</span>
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode">
+            RTL
+          </button>
+        </div>
+
+        <div class="mobile-drawer-actions">
+          <a href="contact.html" class="mobile-btn-cta">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Book a Stay</span>
+          </a>
+          <a href="login.html" class="mobile-btn-login">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            <span>Pet Owner Login</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MAIN CONTENT: EXACTLY 5 CONTENT SECTIONS (INNER PAGE 01: ABOUT US)
+       ====================================================================== -->
+  <main id="mainContent">
+
+    <!-- ------------------------------------------------------------------
+         SECTION 1: ABOUT HERO - FOUNDING MISSION & VET DIRECTED ETHOS
+         ------------------------------------------------------------------ -->
+    <section class="about-hero-section page-hero-banner" aria-labelledby="aboutHeroTitle">
+      <div class="page-hero-overlay"></div>
+      <div class="container page-hero-container">
+
+        <div class="about-hero-header page-hero-content">
+          <span class="section-tag green">Our Heritage &amp; Ethos</span>
+          <h1 id="aboutHeroTitle" class="section-title">
+            Founded with Heart, Directed by Veterinary Science
+          </h1>
+          <p class="section-desc">
+            We built Canine Haven to eliminate cold kennels and provide a nurturing second home where dogs flourish
+            physically, mentally, and socially.
+          </p>
+
+          <div class="page-hero-pills">
+            <span class="hero-mini-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Fear-Free Certified</span>
+            </span>
+            <span class="hero-mini-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>12+ Years Sanctuary Care</span>
+            </span>
+            <span class="hero-mini-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              <span>24/7 Licensed Vet Triage</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 2: FOUR PILLARS OF FEAR-FREE CARE (Strictly Even 2x2 Grid)
+         ------------------------------------------------------------------ -->
+    <section class="pillars-section" aria-labelledby="pillarsTitle">
+      <div class="container">
+
+
+
+        <div style="text-align: center;">
+          <span class="section-tag">Care Philosophy</span>
+          <h2 id="pillarsTitle" class="section-title">The Four Standards That Define Our Sanctuary</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            Veterinary certified protocols that guarantee every dog's physical protection and mental happiness.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+
+          <!-- Card 1 -->
+          <div class="pillar-simple-card">
+            <div class="pillar-simple-img-wrap">
+              <img src="assets/images/about/p27.jpg" alt="Caregiver with friendly dog using gentle touch"
+                class="pillar-simple-img" width="560" height="220">
+              <span class="pillar-simple-badge">100% Fear-Free</span>
+            </div>
+            <div class="pillar-simple-body">
+              <h3 class="pillar-simple-title">1. Certified Fear-Free Handling</h3>
+              <p class="pillar-simple-desc">Positive reinforcement, gentle touch, and zero intimidation.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="pillar-simple-card">
+            <div class="pillar-simple-img-wrap">
+              <img src="assets/images/facilities/p28.jpg" alt="Clinical biosecurity sanitized facility"
+                class="pillar-simple-img" width="560" height="220">
+              <span class="pillar-simple-badge">Medical-Grade HEPA 14</span>
+            </div>
+            <div class="pillar-simple-body">
+              <h3 class="pillar-simple-title">2. Clinical Biosecurity Stand</h3>
+              <p class="pillar-simple-desc">Antimicrobial turf and daily UV-scrubbed HVAC sanitization.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="pillar-simple-card">
+            <div class="pillar-simple-img-wrap">
+              <img src="assets/images/facilities/p29.jpg" alt="Live webcam view of clean dog suites"
+                class="pillar-simple-img" width="560" height="220">
+              <span class="pillar-simple-badge">24/7 Mobile Stream</span>
+            </div>
+            <div class="pillar-simple-body">
+              <h3 class="pillar-simple-title">3. Uncompromised Transparen</h3>
+              <p class="pillar-simple-desc">Zero blind spots with direct HD live streams on your phone.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="pillar-simple-card">
+            <div class="pillar-simple-img-wrap">
+              <img src="assets/images/about/p30.jpg" alt="Licensed veterinary triage examination"
+                class="pillar-simple-img" width="560" height="220">
+              <span class="pillar-simple-badge">Licensed Vet Techs</span>
+            </div>
+            <div class="pillar-simple-body">
+              <h3 class="pillar-simple-title">4. 24/7 Veterinary Supervision</h3>
+              <p class="pillar-simple-desc">Licensed veterinary technicians on duty around the clock.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 3: LEADERSHIP & CARE SPECIALISTS (Strictly Even 3-Card Grid)
+         ------------------------------------------------------------------ -->
+    <section class="team-section" aria-labelledby="teamTitle">
+      <div class="container">
+
+        <div style="text-align: center;">
+          <span class="section-tag green">Dedicated Specialists</span>
+          <h2 id="teamTitle" class="section-title">Meet Our Veterinary &amp; Behavioral Leadership</h2>
+          <p class="section-desc" style="margin-left: auto; margin-right: auto;">
+            Our directors combine decades of clinical veterinary medicine, certified canine behavior training, and
+            hands-on love.
+          </p>
+        </div>
+
+        <div class="team-grid">
+
+          <!-- Specialist 1 -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="assets/images/about/p31.jpg" alt="Dr. Elena Vance, Lead Veterinarian" class="team-img"
+                width="380" height="260">
+            </div>
+            <div class="team-body">
+              <div>
+                <h3 class="team-name">Dr. Elena Vance</h3>
+                <span class="team-role">DVM &bull; Medical Director</span>
+                <p class="team-bio">
+                  14 years in canine emergency medicine. Oversees facility biosecurity protocols and daily wellness
+                  triage.
+                </p>
+              </div>
+              <span class="team-specialty">Fear-Free Certified Elite</span>
+            </div>
+          </div>
+
+          <!-- Specialist 2 -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="assets/images/about/p32.jpg" alt="Marcus Holloway, Head of Canine Behavior" class="team-img"
+                width="380" height="260">
+            </div>
+            <div class="team-body">
+              <div>
+                <h3 class="team-name">Marcus Holloway</h3>
+                <span class="team-role">CPDT-KA &bull; Behavior Director</span>
+                <p class="team-bio">
+                  Canine pack specialist managing temperament matchmaking, playgroup energy balance, and shy dog
+                  acclimation.
+                </p>
+              </div>
+              <span class="team-specialty">Certified Pack Matchmaker</span>
+            </div>
+          </div>
+
+          <!-- Specialist 3 -->
+          <div class="team-card">
+            <div class="team-img-wrap">
+              <img src="assets/images/about/p33.jpg" alt="Chloe Nguyen, Senior Caregiver" class="team-img" width="380"
+                height="260">
+            </div>
+            <div class="team-body">
+              <div>
+                <h3 class="team-name">Chloe Nguyen</h3>
+                <span class="team-role">LVT &bull; Senior Care Specialist</span>
+                <p class="team-bio">
+                  Licensed veterinary technician focused on specialized medication routines, senior dog comfort, and
+                  puppy socialization.
+                </p>
+              </div>
+              <span class="team-specialty">Pet CPR &amp; First-Aid Lead</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 4: SAFETY & ACCREDITATION (Split Layout)
+         ------------------------------------------------------------------ -->
+    <section class="safety-section" aria-labelledby="safetyTitle">
+      <div class="container">
+
+        <div class="safety-grid">
+
+          <!-- Visual: Clean Veterinary Triage -->
+          <div class="safety-visual-card">
+            <img src="assets/images/about/p34.jpg" alt="Clean veterinary triage suite at Canine Haven"
+              class="safety-visual-img" width="560" height="420">
+          </div>
+
+          <!-- Verification Checklist -->
+          <div>
+            <span class="section-tag">Facility Standards</span>
+            <h2 id="safetyTitle" class="section-title">Verified Accreditations &amp; Health Protocols</h2>
+            <p class="section-desc">
+              We uphold clinical transparency so pet parents can leave their dogs with total confidence.
+            </p>
+
+            <div class="safety-list">
+
+              <div class="safety-item">
+                <div class="safety-check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="safety-item-title">IBPSA Gold Certified Facility</h4>
+                  <p class="safety-item-desc">International Boarding &amp; Pet Services Association highest standard
+                    audit pass.</p>
+                </div>
+              </div>
+
+              <div class="safety-item">
+                <div class="safety-check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="safety-item-title">100% Strict Vaccination Verification</h4>
+                  <p class="safety-item-desc">Rabies, DHPP, Bordetella, and Canine Influenza required for every
+                    attending dog.</p>
+                </div>
+              </div>
+
+              <div class="safety-item">
+                <div class="safety-check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="safety-item-title">Red Cross Pet CPR Certified Staff</h4>
+                  <p class="safety-item-desc">All handlers undergo bi-annual emergency response and airway clearance
+                    training.</p>
+                </div>
+              </div>
+
+              <div class="safety-item">
+                <div class="safety-check-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="safety-item-title">Non-Toxic Enzymatic Sanitation</h4>
+                  <p class="safety-item-desc">Yards and suites sanitizing formulas are 100% biodegradable and paw-safe.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 5: CONSULTATION CTA ("last section cta")
+         ------------------------------------------------------------------ -->
+    <section class="about-cta-section" aria-labelledby="aboutCtaTitle">
+      <div class="container">
+
+        <div class="cta-box">
+          <img src="assets/images/about/p35.jpg" alt="Happy pack of dogs with smiling caregivers" class="cta-bg-img"
+            width="1200" height="400">
+
+          <div class="cta-content-inner">
+            <span class="cta-badge">Visit Our Safe Campus</span>
+            <h2 id="aboutCtaTitle" class="cta-headline">
+              Schedule a Private Facility Walkthrough
+            </h2>
+            <p class="cta-desc">
+              Come see our clean suites, walk our turf play yards, and meet our veterinary team in person.
+            </p>
+            <div class="cta-btn-group">
+              <a href="contact.html" class="btn-primary">
+                <span>Book a Guided Tour</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <a href="dashboard.html" class="btn-secondary">
+                <span>Client Portal Access</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       SCROLL TO TOP BUTTON
+       ====================================================================== -->
+  <button id="scrollToTopBtn" class="scroll-to-top" type="button" aria-label="Scroll back to top of page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ======================================================================
+       SHARED FOOTER (Accreditation-Verified & Comprehensive)
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <!-- Top Grid -->
+      <div class="footer-top">
+
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <div class="brand-identity">
+            <img src="assets/images/logo/logo.png" alt="Canine Haven Brand Logo" class="brand-logo-img" width="44"
+              height="44">
+            <div class="brand-text">
+              <span class="brand-name">Canine Haven</span>
+              <span class="brand-tagline">Daycare &amp; Boarding</span>
+            </div>
+          </div>
+          <p class="footer-brand-desc">
+            Certified veterinary-supervised daycare, luxury boarding suites, and antimicrobial turf play yards with 24/7
+            webcams.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" class="footer-social-btn" aria-label="Follow Canine Haven on Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" class="footer-social-btn" aria-label="Follow Canine Haven on Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" class="footer-social-btn" aria-label="Watch Canine Haven on YouTube" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              </svg>
+            </a>
+          </div>
+          <div class="footer-accreditations">
+            <span class="accred-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Fear-Free Certified
+            </span>
+            <span class="accred-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Pet CPR &amp; First-Aid
+            </span>
+            <span class="accred-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              24/7 Vet On-Call
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h2 class="footer-col-title">Navigation</h2>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home (Signature)</a></li>
+            <li><a href="home-2.html" class="footer-link">Home (Resort)</a></li>
+            <li><a href="about.html" class="footer-link">About Our Facility</a></li>
+            <li><a href="services.html" class="footer-link">Daycare &amp; Boarding</a></li>
+            <li><a href="facilities.html" class="footer-link">Play Yards &amp; Suites</a></li>
+            <li><a href="dashboard.html" class="footer-link">Pet Owner Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Specialized Care -->
+        <div>
+          <h2 class="footer-col-title">Specialized Care</h2>
+          <ul class="footer-links">
+            <li><a href="services.html#daycare" class="footer-link">Social Play Daycare</a></li>
+            <li><a href="services.html#boarding" class="footer-link">Luxury Boarding Suites</a></li>
+            <li><a href="services.html#puppy" class="footer-link">Puppy Enrichment</a></li>
+            <li><a href="services.html#senior" class="footer-link">Gentle Senior Lounge</a></li>
+            <li><a href="services.html#spa" class="footer-link">Bath &amp; Spa Refresh</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Facility Hours & Contact -->
+        <div>
+          <h2 class="footer-col-title">Facility Hours &amp; Location</h2>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <div>
+                <strong>Mon – Fri:</strong> 6:30 AM – 7:30 PM<br>
+                <strong>Sat – Sun:</strong> 7:30 AM – 6:30 PM
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div>
+                4820 Greenfield Way, Suite 100<br>
+                Westlake Valley, CA 91361
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <div>
+                <strong>Tel:</strong> (555) 729-7227<br>
+                <strong>24/7 Vet Line:</strong> (555) 729-9911
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Canine Haven Dog Daycare &amp; Boarding Facility. All rights reserved.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Care Agreement &amp; Waiver</a>
+          <a href="#vaccinations">Vaccination Protocols</a>
+          <a href="contact.html">Emergency Line</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       SHARED JAVASCRIPT (Strictly External)
+       ====================================================================== -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

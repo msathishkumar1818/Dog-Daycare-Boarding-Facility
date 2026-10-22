@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Owner Dashboard | Canine Haven Dog Daycare &amp; Boarding Facility</title>
+  <meta name="description"
+    content="Canine Haven Pet Parent Portal: Manage daycare and boarding reservations, stream live HD webcams, track daily activity updates, and review payment history.">
+  <link rel="icon" type="image/png" href="assets/images/logo/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core External Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="dash-page-wrapper">
+
+  <!-- ==============================================================
+       BRANDED PAGE LOADER (Matching Home 1 Exactly)
+       ============================================================== -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Brand Logo" class="loader-logo" width="90" height="90">
+        <div class="loader-spinner"></div>
+      </div>
+      <h2 class="loader-title">Canine Haven</h2>
+      <p class="loader-subtitle">Dog Daycare &amp; Boarding Facility</p>
+    </div>
+  </div>
+
+  <!-- Dashboard Topbar (Replicating Reference Design Header) -->
+  <header class="dash-header-bar" id="dashTopBar">
+    <a href="index.html" class="dash-brand-block" aria-label="Canine Haven Home">
+      <img src="assets/images/logo/logo.png" alt="Canine Haven Logo" class="dash-brand-logo-img" width="42" height="42">
+      <div class="dash-brand-meta">
+        <span class="dash-site-title">CANINE HAVEN</span>
+        <span class="dash-site-tag">PET OWNER PORTAL</span>
+      </div>
+    </a>
+
+    <div class="dash-header-actions">
+      <!-- Live Facility Telemetry Pill -->
+      <div class="dash-telemetry-badge" aria-label="Facility live status">
+        <span class="pulsing-live-dot" aria-hidden="true"></span>
+        <span>SYSTEMS LIVE &bull; 42 DOGS IN CARE</span>
+      </div>
+
+      <!-- Logout Button (Red rounded pill matching reference design) -->
+      <a href="login.html" class="btn-dash-logout" id="dashLogoutTopBtn" aria-label="Log Out">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        <span>Log Out</span>
+      </a>
+
+      <!-- RTL Toggle Button -->
+      <button type="button" class="auth-nav-pill rtl-toggle-btn" id="dashRtlBtn" aria-label="Toggle RTL layout">
+        <span>RTL</span>
+      </button>
+
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <!-- Mobile Menu Hamburger Button -->
+      <button id="mobileMenuOpenBtn" class="mobile-menu-btn" type="button" aria-label="Open portal navigation menu"
+        aria-expanded="false" aria-controls="mobileDrawer">
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE MENU DRAWER & BACKDROP FOR PORTAL (Zero Side-Scrolling)
+       ====================================================================== -->
+  <div id="mobileDrawerBackdrop" class="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+  <div id="mobileDrawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Portal Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <img src="assets/images/logo/logo.png" alt="Canine Haven Logo" class="brand-logo-img" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-name">Canine Haven</span>
+          <span class="brand-tagline">Pet Owner Portal</span>
+        </div>
+      </div>
+      <button id="mobileDrawerCloseBtn" class="mobile-drawer-close" type="button" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-body">
+      <!-- Portal User Dog Profile Preview -->
+      <div class="dash-user-card" style="margin-bottom: 0.5rem; border-radius: 14px;">
+        <div class="dash-user-info-row">
+          <img src="assets/images/logo/favicon.png" alt="Pet Avatar" class="dash-user-avatar" width="40" height="40">
+          <div>
+            <div class="dash-user-name">Alex Carter</div>
+            <span class="dash-user-tier">&bull; Unlimited VIP Member</span>
+          </div>
+        </div>
+        <div class="dash-pet-status-pill" style="margin-top: 0.75rem;">
+          <span class="pet-status-dot"></span>
+          <span>Max: In Care &bull; Daycare Suite 4</span>
+        </div>
+      </div>
+
+      <!-- Vertical Portal Navigation -->
+      <ul class="mobile-nav-list">
+        <li>
+          <a href="#overview" class="dash-menu-link active">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Overview</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#bookingModule" class="dash-menu-link">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Book Dates</span>
+            </div>
+            <span class="dash-menu-pill">CALENDAR</span>
+          </a>
+        </li>
+        <li>
+          <a href="#activityModule" class="dash-menu-link">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+              <span>Daily Updates</span>
+            </div>
+            <span class="dash-menu-pill badge-live">LIVE</span>
+          </a>
+        </li>
+        <li>
+          <a href="#webcamModule" class="dash-menu-link">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+              <span>HD Webcams</span>
+            </div>
+            <span class="dash-menu-pill badge-count">4</span>
+          </a>
+        </li>
+        <li>
+          <a href="#paymentModule" class="dash-menu-link">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              <span>Payment History</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="index.html" class="dash-menu-link">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <span>Public Website</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="about.html#contact" class="dash-menu-link">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              <span>Contact Facility</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="login.html" class="dash-menu-link" style="color: #ef4444;">
+            <div class="dash-menu-item-left">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Log Out</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Drawer Controls for Dashboard -->
+      <div class="mobile-drawer-controls">
+        <div class="mobile-control-row">
+          <span class="mobile-control-label">Appearance</span>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
+            <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+            </svg>
+            <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mobile-control-row">
+          <span class="mobile-control-label">Text Direction</span>
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode">
+            RTL
+          </button>
+        </div>
+
+        <a href="login.html" class="mobile-btn-login" style="background-color: #dc2626; color: #ffffff;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Log Out</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Body Split: Fixed Left Sidebar + Main Content -->
+  <div class="dash-body-split">
+
+    <!-- Left Sidebar (Pinned Fixed Sidebar matching Reference Image) -->
+    <aside class="dash-sidebar-panel" aria-label="Portal Navigation">
+      <nav class="dash-nav-menu">
+
+        <!-- 1. Overview (Active Pill matching Reference Image) -->
+        <a href="#overview" class="dash-menu-link active" id="sideNavOverview">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </div>
+        </a>
+
+        <!-- 2. Book Dates -->
+        <a href="#bookingModule" class="dash-menu-link" id="sideNavBooking">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Book Dates</span>
+          </div>
+          <span class="dash-menu-pill">CALENDAR</span>
+        </a>
+
+        <!-- 3. Daily Updates -->
+        <a href="#activityModule" class="dash-menu-link" id="sideNavActivity">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <span>Daily Updates</span>
+          </div>
+          <span class="dash-menu-pill badge-live">LIVE</span>
+        </a>
+
+        <!-- 4. HD Webcams -->
+        <a href="#webcamModule" class="dash-menu-link" id="sideNavCams">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <polygon points="23 7 16 12 23 17 23 7"></polygon>
+              <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+            </svg>
+            <span>HD Webcams</span>
+          </div>
+          <span class="dash-menu-pill badge-count">4</span>
+        </a>
+
+        <!-- 5. Payment & Invoices -->
+        <a href="#paymentModule" class="dash-menu-link" id="sideNavPayments">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+            <span>Payment History</span>
+          </div>
+        </a>
+
+        <!-- 6. Public Website Link -->
+        <a href="index.html" class="dash-menu-link" id="sideNavPublicWeb">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
+            </svg>
+            <span>Public Website</span>
+          </div>
+        </a>
+
+        <!-- 7. Contact Facility -->
+        <a href="about.html#contact" class="dash-menu-link" id="sideNavContact">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Contact Facility</span>
+          </div>
+        </a>
+
+        <!-- 8. Log Out -->
+        <a href="login.html" class="dash-menu-link" id="sideNavLogout" style="color: #ef4444;">
+          <div class="dash-menu-item-left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span>Log Out</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Bottom Card in Sidebar (Matching Reference Image "CLIENT FACILITY" Card) -->
+      <div class="dash-facility-bottom-card">
+        <span class="facility-card-label">CANINE RESIDENT</span>
+        <div class="facility-card-name">Max (Golden Retriever)</div>
+        <div class="facility-card-status">
+          <span class="pulsing-live-dot" aria-hidden="true"></span>
+          <span>In Care &bull; Daycare Suite 4</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dash-main-stage" id="overview">
+
+      <!-- Top Dark Welcome Hero Card (Matching Reference Image "Hello, Rohit" Banner) -->
+      <div class="dash-welcome-hero">
+        <div class="dash-welcome-copy">
+          <h1 class="dash-welcome-title">Hello, Alex</h1>
+          <p class="dash-welcome-sub">
+            Unlimited VIP Member &bull; Pet ID: <strong>CH-8842</strong> &bull; Lead Caregiver: <strong>Chloe
+              Nguyen</strong>
+          </p>
+        </div>
+        <a href="#bookingModule" class="btn-dash-primary-cta" id="heroBookDatesBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Book Daycare &amp; Boarding</span>
+        </a>
+      </div>
+
+      <!-- Overview Header -->
+      <div class="dash-overview-heading">
+        <h2 class="dash-section-main-title">Overview</h2>
+        <p class="dash-section-sub-title">Everything open on your pet care account right now.</p>
+      </div>
+
+      <!-- 4 Connected Metric Cards Grid (Matching Reference Image 4-KPI Strip) -->
+      <div class="dash-metric-cards-strip">
+
+        <!-- Metric 1: Active Sessions -->
+        <a href="#activityModule" class="dash-kpi-col">
+          <span class="kpi-card-header">ACTIVE SESSIONS</span>
+          <div class="kpi-card-metric metric-cyan">1</div>
+          <div class="kpi-card-footer">
+            <span>Suite 4 &bull; Pick-up 6:30 PM</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Metric 2: Membership Status -->
+        <a href="#paymentModule" class="dash-kpi-col">
+          <span class="kpi-card-header">MEMBERSHIP STATUS</span>
+          <div class="kpi-card-metric metric-amber">ACTIVE</div>
+          <div class="kpi-card-footer">
+            <span>Renews Nov 15 ($180/mo)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Metric 3: Daily Activity Log -->
+        <a href="#activityModule" class="dash-kpi-col">
+          <span class="kpi-card-header">DAILY ACTIVITY LOG</span>
+          <div class="kpi-card-metric metric-green">4.8 hrs</div>
+          <div class="kpi-card-footer">
+            <span>Play Park 2 &bull; Nap logged</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Metric 4: Vaccination Pass -->
+        <a href="#paymentModule" class="dash-kpi-col">
+          <span class="kpi-card-header">VACCINATION PASS</span>
+          <div class="kpi-card-metric metric-purple">VALID</div>
+          <div class="kpi-card-footer">
+            <span>Rabies &amp; Bordetella valid</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- 2-Column Section (Matching Reference Image "Active Service Tickets" & "Next Scheduled Visit") -->
+      <div class="dash-duo-cards-grid">
+
+        <!-- Left: Active Stay & Live Stream -->
+        <div class="dash-panel-card">
+          <div class="dash-panel-card-header">
+            <h3 class="dash-panel-card-title">Active Stay &amp; Live Stream</h3>
+            <a href="#webcamModule" class="dash-panel-link">View all cams &rarr;</a>
+          </div>
+
+          <div class="active-stay-subcard">
+            <div class="stay-top-row">
+              <span class="stay-code-text">STAY-26-4401 &bull; Suite 4 &bull; Sunshine Penthouse</span>
+              <span class="stay-badge-live">LIVE STREAMING</span>
+            </div>
+            <h4 class="stay-headline">Max &bull; Afternoon Agility &amp; Hydro Splash Park</h4>
+
+            <div class="stay-cam-preview" id="webcamModule">
+              <img src="assets/images/facilities/live-webcam-suite.jpg" alt="Live webcam feed of dog suite"
+                class="stay-cam-img" width="560" height="240" loading="lazy">
+              <div class="stay-cam-telemetry-badge">
+                <span class="pulsing-live-dot" aria-hidden="true"></span>
+                <span>CAM 02 &bull; PENTHOUSE PLAY YARD &bull; 1080P HD 60FPS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Next Scheduled Boarding -->
+        <div class="dash-panel-card">
+          <div class="dash-panel-card-header">
+            <h3 class="dash-panel-card-title">Next Scheduled Boarding</h3>
+            <a href="#bookingModule" class="dash-panel-link">Manage booking &rarr;</a>
+          </div>
+
+          <div class="next-visit-subcard">
+            <div class="next-visit-header-wrap">
+              <div class="next-visit-date-badge">
+                <span class="date-badge-day">28</span>
+                <span class="date-badge-month">OCT</span>
+              </div>
+              <div class="next-visit-details">
+                <div class="next-visit-type-row">
+                  <span class="next-visit-type">Executive Garden Suite (3 Nights)</span>
+                  <span class="next-visit-status-tag">&bull; RESERVATION CONFIRMED</span>
+                </div>
+                <div class="next-visit-meta">Check-in: Oct 28, 8:00 AM &bull; Pick-up: Oct 31, 6:00 PM</div>
+              </div>
+            </div>
+
+            <!-- Care & Itinerary Specs -->
+            <div class="next-visit-care-summary">
+              <div class="care-summary-item">
+                <span class="care-summary-label">Assigned Specialist</span>
+                <span class="care-summary-val">Chloe Nguyen &bull; Certified Lead</span>
+              </div>
+              <div class="care-summary-item">
+                <span class="care-summary-label">Dietary &amp; Care Plan</span>
+                <span class="care-summary-val">Royal Canin 2x Daily &bull; Allergy Safe</span>
+              </div>
+            </div>
+
+            <div class="next-visit-perks">
+              <span class="next-perk-tag">&check; Kuranda Orthopedic Bed</span>
+              <span class="next-perk-tag">&check; 2-Way Audio Stream</span>
+              <span class="next-perk-tag">&check; Fresh-Air HVAC</span>
+              <span class="next-perk-tag">&check; Daily Photo Journal</span>
+            </div>
+
+            <!-- Action buttons row balancing with bottom of left video card -->
+            <div class="next-visit-actions-row">
+              <a href="#bookingModule" class="btn-visit-action-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+                Modify Dates
+              </a>
+              <button type="button" class="btn-visit-action-secondary" onclick="alert('Digital Boarding Pass PDF downloaded.')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Boarding Pass PDF
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Core Modules Stack (Booking, Activity Updates, Payment History) -->
+      <div class="dash-modules-stack">
+
+        <!-- ==============================================================
+             MODULE 1: BOOK DAYCARE OR BOARDING DATES
+             ============================================================== -->
+        <section class="dash-section-panel" id="bookingModule" aria-labelledby="bookingSectionTitle">
+          <div class="panel-header-row">
+            <div class="panel-header-left">
+              <h3 id="bookingSectionTitle" class="panel-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Book Daycare or Boarding Dates</span>
+              </h3>
+              <p class="panel-subtitle">Select dates, suite tiers, and veterinary-supervised add-on activities for Max.
+              </p>
+            </div>
+          </div>
+
+          <form id="dashBookingForm" class="booking-form-grid"
+            onsubmit="event.preventDefault(); document.getElementById('bookingToast').classList.add('is-visible'); setTimeout(() => document.getElementById('bookingToast').classList.remove('is-visible'), 4000);">
+
+            <!-- Reservation Service Type -->
+            <div class="dash-form-group">
+              <label for="bookServiceType" class="dash-form-label">Care Service Type</label>
+              <select id="bookServiceType" class="dash-select" required>
+                <option value="daycare">Full-Day Daycare ($42/day)</option>
+                <option value="halfday">Half-Day Play Session ($28/day)</option>
+                <option value="garden" selected>Executive Garden Boarding ($78/night)</option>
+                <option value="penthouse">Presidential Penthouse Boarding ($95/night)</option>
+              </select>
+            </div>
+
+            <!-- Start Date -->
+            <div class="dash-form-group">
+              <label for="bookStartDate" class="dash-form-label">Check-In Date</label>
+              <input type="date" id="bookStartDate" class="dash-input" value="2026-10-28" required>
+            </div>
+
+            <!-- End Date -->
+            <div class="dash-form-group">
+              <label for="bookEndDate" class="dash-form-label">Pick-Up Date</label>
+              <input type="date" id="bookEndDate" class="dash-input" value="2026-10-31" required>
+            </div>
+
+            <!-- Care Room Tier Selection -->
+            <div class="dash-form-group booking-col-span-2">
+              <label for="bookSuiteSelect" class="dash-form-label">Suite Sanctuary Preference</label>
+              <select id="bookSuiteSelect" class="dash-select">
+                <option value="suite-garden">Executive Garden Suite &bull; 6x8 ft &bull; Tempered Glass &bull; $78/night
+                </option>
+                <option value="suite-penthouse">Presidential Penthouse &bull; 8x10 ft &bull; DogTV + Orthopedic &bull;
+                  $95/night</option>
+              </select>
+            </div>
+
+            <!-- Special Nutrition / Care Notes -->
+            <div class="dash-form-group">
+              <label for="bookFeedingNotes" class="dash-form-label">Dietary &amp; Medication Routine</label>
+              <select id="bookFeedingNotes" class="dash-select">
+                <option value="standard">Standard House Grain-Free Kibble</option>
+                <option value="owner-food" selected>Owner-Provided Raw / Fresh Food In Pantry</option>
+                <option value="meds">Requires Morning &amp; Evening Medication (+ $5)</option>
+              </select>
+            </div>
+
+            <!-- Add-on Spa & Enrichment Options -->
+            <div class="dash-form-group booking-col-span-3">
+              <label class="dash-form-label">Luxury Enrichment &amp; Spa Add-Ons</label>
+              <div class="booking-addons-row">
+                <label class="addon-checkbox-card">
+                  <input type="checkbox" name="addons" value="spa" checked>
+                  <div class="addon-card-text">
+                    <span class="addon-name">Warm Hydro-Spa &amp; Deshed</span>
+                    <span class="addon-price">+$45.00</span>
+                  </div>
+                </label>
+                <label class="addon-checkbox-card">
+                  <input type="checkbox" name="addons" value="cuddle" checked>
+                  <div class="addon-card-text">
+                    <span class="addon-name">15-Min Evening Bedtime Cuddle</span>
+                    <span class="addon-price">+$25.00</span>
+                  </div>
+                </label>
+                <label class="addon-checkbox-card">
+                  <input type="checkbox" name="addons" value="kong">
+                  <div class="addon-card-text">
+                    <span class="addon-name">Gourmet Organic Peanut </span>
+                    <span class="addon-price">+$15.00</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Actions Row & Total Preview -->
+            <div class="booking-actions-row booking-col-span-3">
+              <div class="booking-price-preview">
+                <span class="price-preview-label">Estimated Reservation Total:</span>
+                <span class="price-preview-val" id="bookingPriceVal">$304.00</span>
+              </div>
+              <button type="submit" class="btn-dash-primary-cta" id="confirmBookingBtn">
+                <span>Confirm &amp; Reserve Dates</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  style="width: 18px; height: 18px;" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+
+          </form>
+        </section>
+
+        <!-- ==============================================================
+             MODULE 2: DAILY ACTIVITY UPDATES & TIMELINE
+             ============================================================== -->
+        <section class="dash-section-panel" id="activityModule" aria-labelledby="activitySectionTitle">
+          <div class="panel-header-row">
+            <div class="panel-header-left">
+              <h3 id="activitySectionTitle" class="panel-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Daily Activity Updates &amp; Routine</span>
+              </h3>
+              <p class="panel-subtitle">Real-time caregiver logs tracking Max's play, meals, rest, and veterinary
+                triage.</p>
+            </div>
+          </div>
+
+          <div class="timeline-stage-card">
+            <div class="timeline-list">
+
+              <!-- 08:30 AM -->
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-time-row">
+                    <span class="timeline-time">08:30 AM</span>
+                    <span class="timeline-status-tag">COMPLETED</span>
+                  </div>
+                  <div class="timeline-heading">Arrival &amp; Clinical Health Triage</div>
+                  <div class="timeline-desc">Dr. Vance performed 12-point health triage: Temperature normal
+                    (101.4&deg;F), ears clean, energetic disposition.</div>
+                </div>
+              </div>
+
+              <!-- 10:15 AM -->
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-time-row">
+                    <span class="timeline-time">10:15 AM</span>
+                    <span class="timeline-status-tag">COMPLETED</span>
+                  </div>
+                  <div class="timeline-heading">Big Paws Meadow &bull; Pack Agility Play</div>
+                  <div class="timeline-desc">Played with gentle match group (Barnaby, Luna, and Cooper). Ran 2.4 miles
+                    on antimicrobial turf with agility ramps.</div>
+                </div>
+              </div>
+
+              <!-- 01:00 PM -->
+              <div class="timeline-item">
+                <div class="timeline-dot active-now">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                  </svg>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-time-row">
+                    <span class="timeline-time">01:00 PM</span>
+                    <span class="timeline-status-tag"
+                      style="background-color: rgba(229, 152, 55, 0.2); color: var(--color-primary-dark);">IN
+                      PROGRESS</span>
+                  </div>
+                  <div class="timeline-heading">Hydro-Splash Oasis &bull; Water Ramp Exercise</div>
+                  <div class="timeline-desc">Zero-chlorine UV filtered splash play to stay cool. Max loves chasing the
+                    shallow floating rubber toys!</div>
+                </div>
+              </div>
+
+              <!-- 03:00 PM -->
+              <div class="timeline-item">
+                <div class="timeline-dot">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                  </svg>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-time-row">
+                    <span class="timeline-time">03:00 PM</span>
+                    <span class="timeline-status-tag"
+                      style="background-color: var(--bg-surface-alt); color: var(--text-subtle);">SCHEDULED</span>
+                  </div>
+                  <div class="timeline-heading">Private Soundproof Suite Nap &amp; DogTV</div>
+                  <div class="timeline-desc">Fresh orthopedic Kuranda bedding with lavender mist and acoustic classical
+                    audio calibrated for canine tranquility.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- ==============================================================
+             MODULE 3: PAYMENT & INVOICE HISTORY
+             ============================================================== -->
+        <section class="dash-section-panel" id="paymentModule" aria-labelledby="paymentSectionTitle">
+          <div class="panel-header-row">
+            <div class="panel-header-left">
+              <h3 id="paymentSectionTitle" class="panel-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span>Payment &amp; Invoice History</span>
+              </h3>
+              <p class="panel-subtitle">Review all settled daycare packages, luxury boarding statements, and download
+                itemized PDF receipts.</p>
+            </div>
+          </div>
+
+          <div class="table-responsive-container">
+            <table class="dash-data-table">
+              <thead>
+                <tr>
+                  <th scope="col">Invoice #</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Service / Reservation</th>
+                  <th scope="col">Pet</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#INV-2026-8790</strong></td>
+                  <td>Oct 01, 2026</td>
+                  <td>Monthly Unlimited Daycare VIP Pass</td>
+                  <td>Max</td>
+                  <td><strong>$180.00</strong></td>
+                  <td><span class="table-badge-paid">&bull;&nbsp;PAID</span></td>
+                  <td>
+                    <button type="button" class="btn-table-action"
+                      onclick="alert('Downloading Receipt #INV-2026-8790 (PDF)...')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      <span>PDF</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-8755</strong></td>
+                  <td>Sep 22, 2026</td>
+                  <td>Warm Hydro-Spa Therapy &amp; Deshedding Treatment</td>
+                  <td>Max</td>
+                  <td><strong>$75.00</strong></td>
+                  <td><span class="table-badge-paid">&bull;&nbsp;PAID</span></td>
+                  <td>
+                    <button type="button" class="btn-table-action"
+                      onclick="alert('Downloading Receipt #INV-2026-8755 (PDF)...')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      <span>PDF</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-8692</strong></td>
+                  <td>Sep 10, 2026</td>
+                  <td>3-Night Presidential Penthouse Boarding Stay</td>
+                  <td>Max</td>
+                  <td><strong>$285.00</strong></td>
+                  <td><span class="table-badge-paid">&bull;&nbsp;PAID</span></td>
+                  <td>
+                    <button type="button" class="btn-table-action"
+                      onclick="alert('Downloading Receipt #INV-2026-8692 (PDF)...')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      <span>PDF</span>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-8610</strong></td>
+                  <td>Aug 28, 2026</td>
+                  <td>Daycare Pack Play Day &amp; Nail Dremel Trim</td>
+                  <td>Max</td>
+                  <td><strong>$55.00</strong></td>
+                  <td><span class="table-badge-paid">&bull;&nbsp;PAID</span></td>
+                  <td>
+                    <button type="button" class="btn-table-action"
+                      onclick="alert('Downloading Receipt #INV-2026-8610 (PDF)...')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                      </svg>
+                      <span>PDF</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Interactive Reservation Confirmation Toast -->
+  <div class="booking-toast-alert" id="bookingToast" role="alert">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" style="width: 22px; height: 22px;" aria-hidden="true">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <div>
+      <div><strong>Reservation Confirmed for Max!</strong></div>
+      <div style="font-size: 0.8rem; opacity: 0.9;">Confirmation #CH-8842 sent to alex.carter@caninehaven.com.</div>
+    </div>
+  </div>
+
+  <!-- Global Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
