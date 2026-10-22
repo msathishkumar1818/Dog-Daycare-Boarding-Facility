@@ -136,13 +136,13 @@
     height: 380px;
   }
   .page-hero-banner {
-    height: 480px;
-    min-height: 480px;
-    padding-top: calc(var(--header-height) + 1.5rem);
-    padding-bottom: 2rem;
+    min-height: 500px;
+    height: auto;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 2.25rem;
   }
   .page-hero-banner .section-title {
-    font-size: 2.25rem;
+    font-size: 2.15rem;
   }
 }
 
@@ -164,6 +164,16 @@
 
   .brand-tagline {
     font-size: 0.65rem;
+  }
+
+  .page-hero-banner {
+    min-height: 480px;
+    height: auto;
+    padding-top: calc(var(--header-height) + 1.85rem);
+    padding-bottom: 2rem;
+  }
+  .page-hero-banner .section-title {
+    font-size: 1.85rem;
   }
 
   .campus-section,
@@ -379,16 +389,42 @@
   }
 
   .page-hero-banner {
-    height: 440px;
-    min-height: 440px;
-    padding-top: calc(var(--header-height) + 1.25rem);
-    padding-bottom: 1.5rem;
+    min-height: 460px;
+    height: auto !important;
+    padding-top: calc(var(--header-height) + 1.5rem) !important;
+    padding-bottom: 2rem !important;
+  }
+  .page-hero-banner .section-tag {
+    font-size: 0.72rem;
+    padding: 0.32rem 0.8rem;
+    margin-bottom: 0.65rem;
   }
   .page-hero-banner .section-title {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 0.65rem;
   }
   .page-hero-banner .section-desc {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    max-width: 95%;
+  }
+  .page-hero-pills {
+    margin-top: 1rem;
+    gap: 0.45rem;
+  }
+  .hero-mini-pill {
+    padding: 0.38rem 0.8rem;
+    font-size: 0.76rem;
+  }
+  .service-jump-links {
+    margin-top: 1rem;
+    gap: 0.45rem;
+  }
+  .jump-pill {
+    padding: 0.38rem 0.8rem;
+    font-size: 0.76rem;
   }
 
   .hero-trust-row {
@@ -726,7 +762,21 @@
 @media (max-width: 480px) {
   .facility-spec-ribbon {
     grid-template-columns: 1fr 1fr;
-    gap: 0.65rem;
+    gap: 0.55rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 420px;
+  }
+  .spec-ribbon-item {
+    padding: 0.65rem 0.5rem;
+    border-radius: var(--radius-md);
+  }
+  .spec-ribbon-val {
+    font-size: 1.18rem;
+  }
+  .spec-ribbon-lbl {
+    font-size: 0.68rem;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -1194,10 +1244,15 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 400px;
+    margin: 1rem auto 0;
+    gap: 0.5rem;
   }
   .contact-ribbon-pill {
     width: 100%;
     justify-content: center;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
   }
   .contact-map-wrapper {
     height: 300px;
