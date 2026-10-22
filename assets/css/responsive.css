@@ -903,24 +903,33 @@
     left: auto !important;
     width: 100% !important;
     max-width: 440px !important;
-    margin: 0 auto 0.55rem auto !important;
+    margin: 0 auto 0.75rem auto !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-end !important;
+    justify-content: space-between !important;
+    padding: 0 0.25rem !important;
+  }
+  .login-top-bar-actions {
+    display: flex !important;
+    align-items: center !important;
     gap: 0.45rem !important;
   }
   [dir="rtl"] .login-top-bar {
-    justify-content: flex-start !important;
+    justify-content: space-between !important;
   }
   .auth-nav-pill {
     height: 32px !important;
     padding: 0 0.75rem !important;
     font-size: 0.75rem !important;
   }
-  .auth-nav-pill.auth-theme-toggle {
+  .login-top-bar .rtl-toggle-btn,
+  .login-top-bar .theme-toggle-btn {
     width: 32px !important;
     height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
     padding: 0 !important;
+    font-size: 0.72rem !important;
   }
   .login-card-container {
     padding: 1.35rem 1.25rem 1.15rem !important;
