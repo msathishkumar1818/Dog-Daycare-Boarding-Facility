@@ -59,6 +59,28 @@
   }
 }
 
+/* --- Desktop (> 1080px): Hide Mobile Drawer & Backdrop completely --- */
+@media (min-width: 1081px) {
+  .mobile-drawer,
+  .mobile-drawer-backdrop {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    transform: translateX(100%) !important;
+  }
+
+  html[dir="rtl"] .mobile-drawer {
+    transform: translateX(-100%) !important;
+  }
+
+  html.menu-open,
+  body.menu-open {
+    overflow: auto !important;
+    touch-action: auto !important;
+  }
+}
+
 /* --- Switch to Tablet / Mobile Navigation (<= 1080px & 1032px) --- */
 @media (max-width: 1080px) {
   .primary-nav,

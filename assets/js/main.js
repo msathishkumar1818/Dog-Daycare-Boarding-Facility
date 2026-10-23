@@ -203,6 +203,32 @@
       link.addEventListener('click', () => closeDrawer());
     });
 
+    // Automatically close drawer when viewport expands to desktop (> 1080px)
+    const desktopMedia = window.matchMedia('(min-width: 1081px)');
+    const handleDesktopBreak = (e) => {
+      if (e.matches && drawer.classList.contains('is-open')) {
+        closeDrawer();
+      }
+    };
+    if (desktopMedia.addEventListener) {
+      desktopMedia.addEventListener('change', handleDesktopBreak);
+    } else if (desktopMedia.addListener) {
+      desktopMedia.addListener(handleDesktopBreak);
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1080 && drawer.classList.contains('is-open')) {
+        closeDrawer();
+      }
+    });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+        closeDrawer();
+      }
+    });
+
     // Mobile Home Accordion (Click only to toggle)
     if (accordionBtn && accordionContent) {
       accordionBtn.addEventListener('click', (e) => {
